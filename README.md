@@ -4,13 +4,16 @@ CF 离线试玩版，Windows 64 位解压即玩。运行所需的 UnityPlayer �
 
 ## 下载与运行
 
-打开 [v17 设置菜单修复版](https://github.com/OldShuxi66/U3DCF/releases/tag/v17)，下载附件 `CF-Offline-v17-Windows-x64.zip`。完整解压后，打开同名文件夹并双击 `FreeForAllPlaytest.exe`，再选择地图和角色开始游戏。
+打开 [下载最新正式版](https://github.com/OldShuxi66/U3DCF/releases/latest)，下载游戏 ZIP 附件。当前正式版为 **V1.1**，附件名为 `CF-Offline-v1.1-Windows-x64.zip`。完整解压后，双击文件夹中的 `FreeForAllPlaytest.exe`，再选择地图和角色开始游戏。
 
 请下载 Release 中的游戏 ZIP 附件。GitHub 自动生成的 Source code 压缩包不包含完整可玩游戏。不要在压缩包内直接启动；请保留 EXE 旁边的数据目录、`MonoBleedingEdge`、`Config` 和 DLL 文件。
 
-## 当前版本 v17
+## 当前正式版 V1.1
 
-- 新寂静岭：个人竞技，1 名玩家 + 27 名人机；刀锋寨、竞技场：个人竞技，1 名玩家 + 13 名人机。
+- 局内 HUD 恢复原版角色剪影、护甲/生命值底图、武器简图和数字字形，并按生命值切换状态颜色。
+- 新寂静岭恢复斜上方暖色主光，降低环境补光与阴影强度。
+- 第一人称手雷恢复原版双手骨架及拔销、握持、投掷动画；按住鼠标左键准备，松开投出。
+- 新寂静岭：28 人个人竞技；刀锋寨：14 人个人竞技；竞技场：14 人刀战。
 - 运输船：团队竞技，16 对 16，玩家加入蓝队。
 - 准备界面可选飞虎队、奥摩、灵狐者和树喜。树喜按 F 喷气，按住 WASD 可选择八个方向；击杀刷新技能。
 - 喷气前段较快、末段明显减速；从高处冲出后按较低重力缓慢下落。角色技能数值统一在 `Config/CharacterAbilities.json`。
@@ -23,7 +26,8 @@ CF 离线试玩版，Windows 64 位解压即玩。运行所需的 UnityPlayer �
 | 操作 | 按键 |
 | --- | --- |
 | 移动 / 瞄准 | WASD / 鼠标 |
-| 射击、刀轻击、投掷手雷 | 鼠标左键 |
+| 射击 / 刀轻击 | 鼠标左键 |
+| 投掷手雷 | 持手雷时按住鼠标左键准备，松开投出 |
 | 当前武器特殊动作 / 刀重击 | 鼠标右键 |
 | 主武器 / 副武器 / 刀 / 手雷 | 1 / 2 / 3 / 4 |
 | 切换下一把刀 | 持刀时再按 3 |
@@ -40,7 +44,8 @@ CF 离线试玩版，Windows 64 位解压即玩。运行所需的 UnityPlayer �
 
 ## 验证与反馈
 
-v17 已从 ZIP 解压副本校验文件，并完成菜单和四张地图的 Direct3D 11 启动检查；UnityPlayer、Mono 和配置均从发布包加载。这是本机自动检查，仍需在图形游戏中体验声音与手感。
+V1.1 发布前已成功完成 Windows x64 独立构建，并从 ZIP 解压副本验证 SHA-256、全部 158 项载荷清单、运行库、源配置匹配，以及地图菜单和四张地图的 Direct3D 11 启动。完整长局、所有枪械姿态及手雷时长/碰撞边界尚未全部覆盖。
 
-反馈问题时请提供版本、地图、复现步骤，以及玩家日志 `%USERPROFILE%\AppData\LocalLow\Local Prototype\Free For All Playtest v17\Player.log`。
+已知问题：部分 Visual Effect Graph 会在 Unity 日志中报告 compute kernel 无效警告；发布前的构建和四张地图启动检查未因此失败。
 
+反馈问题时请提供版本、地图、复现步骤，以及 `%USERPROFILE%\AppData\LocalLow\Local Prototype\` 下对应游戏目录中的 `Player.log`。
